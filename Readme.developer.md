@@ -1,4 +1,4 @@
-# bwa_sambamba_rocksort Developer Readme
+# bwa_sambamba_rocksort_picard Developer Readme
 
 <!--
 TODO: Please edit this Readme.developer.md file to include information
