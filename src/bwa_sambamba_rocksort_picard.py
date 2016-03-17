@@ -229,7 +229,7 @@ def main(reads_1, reference, reference_index, read_group_sample, loglevel,
 
         # Make sure to reset the bam_files array, it will be used for the next
         # set of processes
-        bam_files = [sorted_bam]
+        bam_files = ["{0}.bam".format(sorted_bam)]
 
     # Mark duplicates in BAM file
 
