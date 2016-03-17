@@ -202,7 +202,7 @@ def main(reads_1, reference, reference_index, read_group_sample, loglevel,
         dx_exec.check_execution_syscode(alignment, "Alignemnt of reads {0}".format(
             index))
 
-        bam_files.append(aligned_bam)
+        bam_files.append("{0}.bam".format(aligned_bam))
 
     # Clean up FASTQ files to make space on HDDs (especially useful for WGS)
 
