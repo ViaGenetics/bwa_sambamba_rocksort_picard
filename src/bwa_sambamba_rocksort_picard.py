@@ -202,7 +202,7 @@ def main(reads_1, reference, reference_index, read_group_sample, loglevel,
         dx_exec.check_execution_syscode(alignment, "Alignemnt of reads {0}".format(
             index))
 
-        bam_files.append("{0}.bam".format(aligned_bam))
+        bam_files.append(aligned_bam)
 
     # Clean up FASTQ files to make space on HDDs (especially useful for WGS)
 
@@ -236,7 +236,7 @@ def main(reads_1, reference, reference_index, read_group_sample, loglevel,
     sorted_bam = bam_files[0]
     markdup_bam = "out/output_markdups_bams/{0}.markdups.bam".format(read_group_sample)
     dups_metrics_file = "{0}.markdups.metrics.txt".format(read_group_sample)
-    picard_markdup_cmd = 'java -Xmx{0}m -jar /opt/jar/picard.jar MarkDuplicates {1} I={2} O={3} M={4}'.format(
+    picard_markdup_cmd = 'java -Xmx{0}m -jar /opt/jar/picard.jar MarkDuplicates {1} I={2}.bam O={3} M={4}'.format(
         max_ram, advanced_picard_markdups_options, sorted_bam,
         markdup_bam, dups_metrics_file)
     picard_markdup = dx_exec.execute_command(picard_markdup_cmd, debug=True)
